@@ -1,24 +1,44 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { Navbar } from "./navbar";
+import { Jumbotron } from "./jumbotron";
+import { Card } from "./card";
+import { Footer } from "./footer";
 
 //create your first component
 export function Home() {
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container text-center">
+			<Navbar />
+			<Jumbotron />
+			<div className="container text-center d-flex justify-content-between">
+				<Card
+					text="this is a rondomly generated picture of a girl"
+					image="https://loremflickr.com/320/240/girl"
+					buttonLabel="go here"
+					title="girl"
+				/>
+				<Card
+					text="this is a rondomly generated picture of a dog"
+					image="https://loremflickr.com/320/240/dog"
+					buttonLabel="go there"
+					title="dog"
+				/>
+				<Card
+					text="this is a rondomly generated picture of a cat"
+					image="https://loremflickr.com/320/240/"
+					buttonLabel="go where?"
+					title="cat"
+				/>
+				<Card
+					text="this is a rondomly generated picture of a house"
+					image="https://loremflickr.com/320/240/house"
+					buttonLabel="go anywhere"
+					title="house"
+				/>
+			</div>
+			<div className="container text-center">
+				<Footer />
+			</div>
 		</div>
 	);
 }
